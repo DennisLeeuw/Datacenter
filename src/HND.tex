@@ -1,0 +1,15 @@
+Het Hierarchisch Netwerk Ontwerp is een oorspronkelijk door Cisco bedacht model. Dit netwerk model bestaat uit 3 lagen. De access laag, de distributie laag en de core laag zoals weergegeven in figuur \ref{HND}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{HND.png}
+\caption{Blauw is de core, groen is de distributie laag en rood is de access laag met links de gebruikers en rechts der servers}
+\label{HND}
+\end{figure}
+
+Op de access laag worden over het algemeen access switches gebruikt (OSI-layer 2), maar ook routers kunnen op deze laag voorkomen. Dit zijn "goedkope" switches die zorgen dat er voldoende poorten zijn voor alle gebruikers en alle servers in het netwerk. VLANs worden vaak op de access laag gebruikt om broadcast domains van elkaar te scheiden. De kosten per port is hier vaak de belangrijkste afweging. Het uitvallen van een access switch treft alleen de aangesloten gebruikers en heeft verder geen invloed op de rest van de organisatie. Dit is niet het geval als het een access switch in de serverruimte is waar meerdere servers aan hangen.
+
+Op de distributie laag vinden we de meer intelligente devices die bijvoorbeeld afdelingen binnen een organisatie van elkaar scheiden door bijvoorbeeld firewalling, IP-routing en filtering. Ook QoS wordt op vaak op deze laag geregeld. Verbindingen naar andere kantoren van een organisatie behoren ook tot de distributie laag. 
+
+De core laag bevat vaak de duurste netwerk onderdelen omdat deze moeten zorgen dat er grote hoeveelheiden data op een snelle manier verdeeld worden over de verschillende distributie componenten. Vaak zijn de core componenten redundant uitgevoerd. De hoogste netwerksnelheden per port vinden we vaak in deze laag. Omdat snelheid hier de fundamentele factor is vind hier geen of nauwelijks filtering plaats. Op deze laag kunnen we switches of routes (Layer 2 of 3 technologie) tegen komen.
+
