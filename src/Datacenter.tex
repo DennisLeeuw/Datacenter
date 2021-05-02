@@ -3,6 +3,8 @@
 %Additional packages
 \usepackage[ascii]{inputenc}
 \usepackage[T1]{fontenc}
+% textcomp needed for degree sign
+\usepackage{textcomp}
 \usepackage[dutch,english]{babel}
 \usepackage{syntonly}
 \usepackage[official]{eurosym}
@@ -11,7 +13,9 @@
 \graphicspath{ {./images/} }
 \usepackage{float}
 \usepackage{hyperref}
+%\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+%\usepackage{xurl}
 \usepackage{tabularx}
 \usepackage{scrextend}
 \addtokomafont{labelinglabel}{\sffamily}
@@ -39,6 +43,9 @@
   rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
   showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
 }
+
+% Commands
+%\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
 
 % Uncomment for production
 % \syntaxonly
@@ -129,12 +136,37 @@
 \section{Distributie paneel}
 \input{src/dc_mdb}
 \section{Generator}
+\input{src/dc_generator}
 
 \chapter{Koeling}
-% topkoeling
-% Redundancy
+\input{src/dc_koeling}
+\section{Lucht circulatie}
+\input{src/dc_koeling_stroming}
+\section{Temperatuur}
+\input{src/dc_koeling_temperatuur}
+\section{Luchtvochtigheid}
+\input{src/dc_koeling_luchtvochtigheid}
+\section{Koeltechnieken}
+\subsection{Compressorkoeling}
+\input{src/dc_koeling_compressor}
+\subsection{Adiabatische koeling}
+\input{src/dc_koeling_adiabatisch}
+\subsection{PCM koeling}
+\input{src/dc_koeling_pcm}
+\subsection{Vloeistofkoeling}
+\input{src/dc_koeling_vloeistof}
 
 \chapter{Beveiliging}
+\section{Redundantie}
+\input{src/dc_redundancy}
+\subsection{N+1}
+\input{src/dc_redundancy_N1}
+\subsection{2N}
+\input{src/dc_redundancy_2N}
+\subsection{2(N+1)}
+\input{src/dc_redundancy_2N1}
+\subsection{xN/y}
+\input{src/dc_redundancy_xNy}
 \section{Toegangsbeveiliging}
 \input{src/dc_security_physical}
 \section{Calamiteiten bewaking en beveiliging}
