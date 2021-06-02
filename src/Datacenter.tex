@@ -12,10 +12,9 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{float}
+\usepackage{xurl}
 \usepackage{hyperref}
-%\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
-%\usepackage{xurl}
 \usepackage{tabularx}
 \usepackage{scrextend}
 \addtokomafont{labelinglabel}{\sffamily}
@@ -113,9 +112,9 @@
 \section{De servers}
 \input{src/server_hardware}
 \section{Stroomvoorziening}
-\input{cabinet_PDU}
+\input{src/cabinet_PDU}
 \section{Netwerkbekabeling}
-\input{cabinet_network}
+\input{src/cabinet_network}
 
 \chapter{Netwerk voorzieningen}
 \section{Hi\"erarchisch Netwerk Ontwerp}
@@ -171,6 +170,16 @@
 \input{src/dc_redundancy_2N1}
 \subsection{xN/y}
 \input{src/dc_redundancy_xNy}
+\section{TIA-942 Datacenter Classificatie}
+\input{src/dc_TIA942_Tier}
+\subsection{Tier-1}
+\input{src/dc_TIA942_Tier1}
+\subsection{Tier-2}
+\input{src/dc_TIA942_Tier2}
+\subsection{Tier-3}
+\input{src/dc_TIA942_Tier3}
+\subsection{Tier-4}
+\input{src/dc_TIA942_Tier4}
 \section{Toegangsbeveiliging}
 \input{src/dc_security_physical}
 \section{Calamiteiten bewaking en beveiliging}
